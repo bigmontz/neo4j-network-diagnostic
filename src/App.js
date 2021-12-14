@@ -101,14 +101,11 @@ function App() {
       <header className="App-header">
         <h3>Network Diagnostic Tool</h3>
         <form onSubmit={handleSubmit}>
-          <label for="url">Connect URL:</label>
-          <input type="text" id="url" name="url" value={url} onChange={handleChange(setUrl)} />
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" value={username} onChange={handleChange(setUsername)} />
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" value={password} onChange={handleChange(setPassword)} />
-          <label for="query">Query:</label>
-          <input type="textarea" id="query" name="query" readOnly value={query} onChange={handleChange(setQuery)} />
+          <label>Connect URL: <input type="text" id="url" name="url" value={url} onChange={handleChange(setUrl)} /></label>
+          <label>Username: <input type="text" id="username" name="username" value={username} onChange={handleChange(setUsername)} /></label>
+          <label>Password: <input type="password" id="password" name="password" value={password} onChange={handleChange(setPassword)} /></label>
+          <label>Query: <input type="textarea" id="query" name="query" readOnly value={query} onChange={handleChange(setQuery)} /></label>
+          
           <Button type="submit" disabled={!connectEnabled}>Connect</Button>
           <Button color="secondary" disabled={!disconnectEnabled} onClick={handleDisconnect}>Disconnect</Button>
         </form>
