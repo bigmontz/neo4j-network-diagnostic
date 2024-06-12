@@ -73,7 +73,7 @@ function App() {
     if (newDriver !== null) {
       try {
         let session = newDriver.session();
-        let result = await session.readTransaction(tx => tx.run(query));
+        let result = await session.executeRead(tx => tx.run(query));
         await session.close();
         console.log(result);
         const id = setTimeout(async () => await runQueryWhileDriverExists(newDriver), 1000)
